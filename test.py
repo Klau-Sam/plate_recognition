@@ -13,7 +13,7 @@ russian_plate = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_russi
 def adjusted_russian_plate(img):
     russian_ing = img.copy()
 
-    face_rect = face_cascade.detectMultiScale(russian_ing, scaleFactor=1.2, minNeighbors=5)
+    face_rect = face_cascade.detectMultiScale(russian_ing, scaleFactor=1.05, minNeighbors=20)
 
     for (x, y, w, h) in face_rect:
         cv2.rectangle(russian_ing, (x, y),
